@@ -3,7 +3,7 @@ const inquirer = require ("inquirer");
 var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
-    user: "loot",
+    user: "root",
     password: "root",
     database: "bamazon_db",
     
@@ -22,5 +22,5 @@ inquirer.prompt({
 	message: "Welcom to bamazon!! would you please select the item id of the object you like to pruchase.",
 	choices:["Ttem ID", "How Many?"]
 })
-}
+};
  
