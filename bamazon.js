@@ -15,5 +15,12 @@ connection.connect(function(err) {
     // run the start function after the connection is made to prompt the user
     start();
   });
-
+var start = function(){
+inquirer.prompt({
+	name:"idAndHowMany",
+	type:"rawlist",
+	message: "Welcom to bamazon!! would you please select the item id of the object you like to pruchase.",
+	choices:["Ttem ID", "How Many?"]
+})
+}
  
