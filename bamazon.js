@@ -9,24 +9,19 @@ var connection = mysql.createConnection({
     
 });
 //connect to mysql sever and database
-// connect to the mysql server and sql database
 connection.connect(function(err) {
 	if (err) throw err;
 	console.log("connected as id " + connection.threadId);
     displayItems();
     // run the start function after the connection is made to prompt the user
-   // start();
+   
   });
-//var start = function(){
+
 	// Display Inventory from database once MySQL connection is established
 function displayItems() {
     connection.query("SELECT * FROM products", function(err, res) {
         if (err) throw err;
-        // TIP to have all products in a nice TABLE 
-            // => console.table(res);
-                // => This shows all items in a table on Terminal. It looks clean, but index numbers also appear. This is just another method to list the products on Terminal.
-
-        // Welcome Message and Show Products List with information
+      //welcome message in the terminal
         console.log(" WELCOME TO BAMAZON \n");
         
 
@@ -34,7 +29,8 @@ function displayItems() {
             console.log (
                 "Item ID: " + res[i].item_id + " | Product Name: " + res[i].product_name + " | Department Name: " + res[i].department_name + " | Price: $" + res[i].price + " | Stock Quantity: " + res[i].stock_quantity +
                 "\n------------------------------------------------------------------------------------------------------------------------------------"
-            );   
+			);   
+			//lines are to add between items in my terminal to make it easier to read and cleaner.
             console.log("------------------------------------------------------------------------------------------------------------------------------------");
         };
 
@@ -42,7 +38,7 @@ function displayItems() {
     });
 };
 
-// Prompt user to enter ITEM ID the user wants to purchase, and QUANTITY of chosen Item ID 
+// Prompt that ask user for item id and amount of how much they'd like of that item.
 function purchasePrompt () {
     connection.query("SELECT * FROM products", function(err, res) {
         if (err) throw err;
@@ -75,8 +71,6 @@ function purchasePrompt () {
                 }
             }
         ]).then(function(answer){
-
-            // Declare Variables to calculate stock level
                 // 1st product's index number is 0. Make sure to minus one from the ID
             var wantToBuy = res[answer.id-1];
             var currentStock = res[answer.id-1].stock_quantity;
