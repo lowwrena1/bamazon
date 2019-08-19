@@ -26,8 +26,8 @@ The user then is able to purchase one of the listed items by inputting the Item 
 mySQL data base
 ![](images/bamazon_db.PNG)
 Pulling stock info
-![](images/https://github.com/lowwrena1/bamazon/blob/master/images/bamazon1.PNG)
+![](images/bamazon1.PNG)
 User typing in id number & quantity
-![](images/https://github.com/lowwrena1/bamazon/blob/master/images/bamazon2.PNG)
+![](images//bamazon2.PNG)
 Final information being shown
-![](images/https://github.com/lowwrena1/bamazon/blob/master/images/bamazon.PNG)
+![](images/bamazon.PNG)
